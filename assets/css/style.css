@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+/*
+CSS rules to specify families:
+font-family: 'Manrope', sans-serif;
+*/
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    /* margin: 0; want this?*/
+    /* margin-bottom: 6px; want this?*/
+    text-align: center;
+    font-size: 11px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); /*hsl(hue, saturation, lightness)*/
+}
