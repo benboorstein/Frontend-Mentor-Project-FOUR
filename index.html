@@ -32,22 +32,40 @@
   </head>
 
   <body>
-    <!-- ***************** START HERE ***************** -->
-    Simple, traffic-based pricing
-    Sign-up for our 30-day trial. No credit card required. 
 
-    Pageviews
-    $ /month
+    <header>
+      <div> <!-- QQQ: This is here to provide a parent to its children, which I think will be needed. I considered doing an <ul> instead and making the children <li>s, but thought that would probably not be the most appropriate us of <ul>. Thoughts? -->
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </div>
+    </header>
 
-    Monthly Billing
-    Yearly Billing 25% discount
+    <main>
+      <div class="main-top">
+        <h1>Pageviews</h1>
+        <!-- SLIDER THING GOES HERE - HOW? -->
+        <p>$ /month</p>
+        <ul>
+          <li>Monthly Billing</li>
+          <li>
+            <label class="switch">
+              <input type="checkbox" id="toggle">
+              <span class="slider round"></span>
+            </label>
+          </li>
+          <li>Yearly Billing 25% discount</li>
+        </ul>
+      </div>
+      <div class="main-bottom">
+        <ul>
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+        <a href="#">Start my trial</a> <!-- QQQ: I made this a link because clicking this leads to another page. But I figure I'll want to also make it a button, probably by making a button the parent of the <a> element. -->
+      </div>
+    </main>
 
-    Unlimited websites
-    100% data ownership
-    Email reports
-
-    Start my trial
-    
     <footer>
       <p class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
