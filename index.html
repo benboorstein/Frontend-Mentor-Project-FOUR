@@ -34,7 +34,7 @@
   <body>
 
     <header>
-      <div> <!-- QQQ: This is here to provide a parent to its children, which I think will be needed. I considered doing an <ul> instead and making the children <li>s, but thought that would probably not be the most appropriate us of <ul>. Thoughts? -->
+      <div>
         <h1>Simple, traffic-based pricing</h1>
         <p>Sign-up for our 30-day trial. No credit card required.</p>
       </div>
@@ -42,18 +42,21 @@
 
     <main>
       <div class="main-top">
-        <h1>Pageviews</h1>
-        <!-- SLIDER THING GOES HERE - HOW? -->
-        <p>$ /month</p>
+        <h1>100K Pageviews</h1> <!-- the "100K" will vary -->
+        <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
+          <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
+          <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
+        </form>
+        <p>$16.00 <span>/ month</span></p> <!-- the "16:00" will vary -->
         <ul>
           <li>Monthly Billing</li>
           <li>
-            <label class="switch">
-              <input type="checkbox" id="toggle">
+            <label class="switch"> <!-- QQQ: Should this have <form> as a parent? -->
+              <input type="checkbox" id="toggle"/>
               <span class="slider round"></span>
             </label>
           </li>
-          <li>Yearly Billing 25% discount</li>
+          <li>Yearly Billing <span>-25%</span></li>
         </ul>
       </div>
       <div class="main-bottom">
@@ -62,7 +65,7 @@
           <li>100% data ownership</li>
           <li>Email reports</li>
         </ul>
-        <a href="#">Start my trial</a> <!-- QQQ: I made this a link because clicking this leads to another page. But I figure I'll want to also make it a button, probably by making a button the parent of the <a> element. -->
+        <a href="#" target="_blank"><button type="button">Start my trial</button></a>
       </div>
     </main>
 
