@@ -42,12 +42,12 @@
 
     <main>
       <div class="main-top">
-        <h1>100K Pageviews</h1> <!-- the "100K" will vary -->
+        <h1><span id="pageviews">100</span>K Pageviews</h1>
         <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
           <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
           <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
         </form>
-        <p>$16.00 <span>/ month</span></p> <!-- the "16:00" will vary -->
+        <p>$<span id="price">22.00</span> <span id="billing-period">/ month</span></p>
         <ul>
           <li>Monthly Billing</li>
           <li>
@@ -61,9 +61,9 @@
       </div>
       <div class="main-bottom">
         <ul>
-          <li>Unlimited websites</li>
-          <li>100% data ownership</li>
-          <li>Email reports</li>
+          <li><img src="./assets/img/icon-check.svg" alt="">Unlimited websites</li>
+          <li><img src="./assets/img/icon-check.svg" alt="">100% data ownership</li>
+          <li><img src="./assets/img/icon-check.svg" alt="">Email reports</li>
         </ul>
         <a href="#" target="_blank"><button type="button">Start my trial</button></a>
       </div>

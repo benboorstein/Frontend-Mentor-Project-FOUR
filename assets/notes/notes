@@ -1,0 +1,53 @@
+For the range slider, the below code should work, but it doesn't. I'm skipping it for now because without any styling it looks good enough for now.
+
+
+/* Below is for the slider */
+
+/*might help: https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html*/
+/*might help: https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html*/
+/*might help: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/*/
+
+input[type=range] {
+	-webkit-appearance: none;
+	height: 35px; /* pick your own value */
+	padding: 0;	
+	/* your slider styles */
+       background-color: blue;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	box-sizing: content-box;
+	/* your thumb styles */
+       background-color: green;
+}
+
+input[type=range]::-moz-range-thumb {
+	/* again your thumb styles */
+       background-color: green;
+}
+
+input[type=range]::-ms-thumb { /* should come after -webkit- */
+	/* again your thumb styles */
+        background-color: green;
+	/* may require different margins */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	/* your track styles */
+       background-color: pink; 
+}
+
+input[type=range]::-moz-range-track {
+	/* again your track styles */
+        background-color: pink;
+}
+
+input[type=range]::-ms-track { /* should come after -webkit- */
+	border-color: transparent;
+	color: transparent;
+	/* again your track styles */
+       background-color: pink;
+}
+
+/* Above is for the slider */
