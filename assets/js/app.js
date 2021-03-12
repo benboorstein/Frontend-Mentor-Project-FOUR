@@ -45,39 +45,28 @@ const ranges = [
     }
 ]
 
-document.getElementById('points').addEventListener('change', (event) => {
-    document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
-    document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
-})
+document.getElementById('toggle').addEventListener('click', changeBilling)
 
-document.getElementById('toggle').addEventListener('click', billingPeriod)
-
-function billingPeriod() {
+function changeBilling() {
     let rangeSlider = document.getElementById('points')
 
     if (document.getElementById('toggle').checked) {
         document.getElementById('billing-period').textContent = '/ year'
         document.getElementById('price').textContent = ranges[rangeSlider.value].price*(.75).toFixed(2)
-        document.getElementById('points').addEventListener('change', (event) => {
-            document.getElementById('price').textContent = ranges[event.target.value].price*(.75).toFixed(2) // QQQ: toFixed(2) is working, but it's not working once the *(.75) is added. I've tried putting the parentheses several different places, and I've tried moving the *(.75) to the end.
-        })
+        
     } else {
         document.getElementById('billing-period').textContent = '/ month'
         document.getElementById('price').textContent = ranges[rangeSlider.value].price.toFixed(2)
-        document.getElementById('points').addEventListener('change', (event) => {
-            document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
-        })
     }
 }
 
+document.getElementById('points').addEventListener('change', (event) => {
 
-
-
-
-
-
-
-
-
-
-
+    if (document.getElementById('toggle').checked) {
+        document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
+        document.getElementById('price').textContent = ranges[event.target.value].price*(.75).toFixed(2)
+    } else {
+        document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
+        document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
+    }
+})
