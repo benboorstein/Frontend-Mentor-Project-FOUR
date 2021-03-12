@@ -46,19 +46,38 @@ const ranges = [
 ]
 
 document.getElementById('points').addEventListener('change', (event) => {
-
-    document.getElementById('pageviews').textContent = ranges[Number(event.target.value)].pageViews // QQQ: Do I need Number() here (it works without it)?
-    document.getElementById('price').textContent = ranges[Number(event.target.value)].price.toFixed(2) // QQQ: Do I need Number() here (it works without it)?
+    document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
+    document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
 })
 
-// The toggle
-document.getElementById('toggle').addEventListener('click', getYearlyBilling)
+document.getElementById('toggle').addEventListener('click', billingPeriod)
 
-function getYearlyBilling() {
+function billingPeriod() {
+    let rangeSlider = document.getElementById('points')
+
     if (document.getElementById('toggle').checked) {
         document.getElementById('billing-period').textContent = '/ year'
-        document.getElementById('price').textContent = ranges[Number(event.target.value)].price*.75.toFixed(2) // QQQ: How do I access the proper array index from within this function? Obviously I know I can't in the way I have in the line above. And how do I work in the ".75" so that it ALSO gets rounded to only 2 places past the decimal point?
+        document.getElementById('price').textContent = ranges[rangeSlider.value].price*(.75).toFixed(2)
+        document.getElementById('points').addEventListener('change', (event) => {
+            document.getElementById('price').textContent = ranges[event.target.value].price*(.75).toFixed(2) // QQQ: toFixed(2) is working, but it's not working once the *(.75) is added. I've tried putting the parentheses several different places, and I've tried moving the *(.75) to the end.
+        })
     } else {
         document.getElementById('billing-period').textContent = '/ month'
+        document.getElementById('price').textContent = ranges[rangeSlider.value].price.toFixed(2)
+        document.getElementById('points').addEventListener('change', (event) => {
+            document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
+        })
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
