@@ -86,14 +86,9 @@ main {
             2px 10px 12px 0px rgba(133, 143, 173, 0.2);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    color: hsl(225, 20%, 60%);
-}
-
-.ul-1 h1 {
+.main-top h1 {
     text-transform: uppercase;
+    color: hsl(225, 20%, 60%);
     font-size: 17px;
     letter-spacing: 1px;
     margin-bottom: 47px;
@@ -101,7 +96,7 @@ ul {
 
 /* Note: This is where styling for the range slider would go. For info on it, reference "notes" document. */
 
-.ul-1 p {
+.main-top p {
     color: hsl(227, 35%, 25%);
     font-size: 43px;
     font-weight: 800;
@@ -110,21 +105,27 @@ ul {
     align-items: center;
 }
 
-.ul-1 p span:nth-of-type(2) {
+#billing-period {
     color: hsl(225, 20%, 60%);
     font-size: 19px;
     font-weight: 600;
     margin-left: 12px;
 }
 
-.ul-2 {
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: hsl(225, 20%, 60%);
+}
+
+.main-top ul {
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
     margin-left: 29px;
 }
 
-.ul-2 li:nth-of-type(1) {
+.main-top ul li:nth-of-type(1) {
     margin-right: 16px;
 }
 
@@ -194,11 +195,16 @@ input:checked + .slider:before {
 
 /********** The toggle ends here **********/
 
-.ul-2 li:nth-of-type(3) {
+.main-top ul li:nth-of-type(3) {
     margin-left: 16px;
 }
 
-.ul-2 li:nth-of-type(3) span {
+.main-top ul li:nth-of-type(3) span::before {
+        content: "-";
+        font-size: 13px;
+}
+
+.main-top ul li:nth-of-type(3) span {
     margin-left: 4px;
     padding: 3px 11px 4px 11px;
     border-radius: 50px;
@@ -217,15 +223,15 @@ input:checked + .slider:before {
     margin-bottom: 30px;
 }
 
-.ul-3 li {
+.main-bottom ul li {
     margin-bottom: 13px;
 }
 
-.ul-3 li:nth-of-type(3) {
+.main-bottom ul li:nth-of-type(3) {
     margin-bottom: 42px;
 }
 
-.ul-3 img {
+.main-bottom ul img {
     width: 12px;
     height: 10.666px;
     margin-right: 20px;
@@ -298,12 +304,125 @@ footer
         margin-right: auto;
     }
 
+    .main-top {
+        background-color: lightgreen; /*just keep here while positioning the elements. Then delete.*/
+        display: flex;
+        justify-content: space-around;
+        /* align-items: center; */
+        flex-wrap: wrap;
+    }
 
-    /* .ul-1 li:nth-of-type(3) {
+    .main-top h1 {
+        font-size: 14px;
+        order: -2;
+    }
+
+    .main-top p {
+        font-size: 35px;
+        order: -1;
+    }
+
+    #billing-period {
+        font-size: 14px;
+    }
+
+    .main-top ul li:nth-of-type(1) {
+        font-size: 12px;
+        margin-right: 12px;
+    }
+
+    /********** The toggle begins here **********/
+
+    /* The switch (the box around the slider) */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 41px;
+        height: 19px;     
+    }
+
+    /* Hides default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    .slider {
         position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index: -1;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: hsl(223, 50%, 87%);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    /* I added */
+    .slider.round:active {
+        opacity: 0.5;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 14.53px;
+        width: 14.53px;
+        left: 2.5px;
+        bottom: 2.2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(21px);
+        -ms-transform: translateX(21px);
+        transform: translateX(21px);
+    }
+
+    /* Rounding the slider */
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    /********** The toggle ends here **********/
+
+    .main-top ul li:nth-of-type(3) {
+        font-size: 12px;
+        margin-left: 12px;
+    }
+
+    .main-top ul li:nth-of-type(3) span::before {
+        content: "";
+        font-size: 13px;
+    }
+
+    .main-top ul li:nth-of-type(3) span {
+        font-size: 10px;
+        padding: 1px 7px 2px 7px;
+        margin-left: 6px;
+    }
+
+    .main-top ul li:nth-of-type(3) span::after {
+        content: " discount";
+        font-size: 10px;
+    }
+
+
+
+
+
+    /* .main-top p {
+        margin-top: -30px;
+        
     } */
 
 

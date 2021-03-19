@@ -42,17 +42,13 @@
 
     <main>
       <div class="main-top">
-        <ul class="ul-1">
-          <li><h1><span id="pageviews">100</span>K Pageviews</h1></li>
-          <li>
-            <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
-              <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
-              <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
-            </form>
-          </li>
-          <li><p>$<span id="price">22.00</span> <span id="billing-period">/ month</span></p></li>
-        </ul>
-        <ul class="ul-2">
+        <h1><span id="pageviews">100</span>K Pageviews</h1>
+        <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
+          <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
+          <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
+        </form>
+        <p>$<span id="price">22.00</span> <span id="billing-period">/ month</span></p>
+        <ul>
           <li>Monthly Billing</li>
           <li>
             <label class="switch"> <!-- QQQ: Should this have <form> as a parent? -->
@@ -60,11 +56,11 @@
               <span class="slider round"></span>
             </label>
           </li>
-          <li>Yearly Billing <span>-25%</span></li>
+          <li>Yearly Billing <span>25%</span></li>
         </ul>
       </div>
       <div class="main-bottom">
-        <ul class="ul-3">
+        <ul>
           <li><img src="./assets/img/icon-check.svg" alt="">Unlimited websites</li>
           <li><img src="./assets/img/icon-check.svg" alt="">100% data ownership</li>
           <li><img src="./assets/img/icon-check.svg" alt="">Email reports</li>
