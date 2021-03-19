@@ -1,72 +1,79 @@
-const ranges = [
+const ranges = [ // An array of objects - Often the structure that's best to use!
     {
         pageViews: 25,
-        price: 2.00
+        monthlyPrice: 2.00
     },
     {
         pageViews: 40,
-        price: 7.00
+        monthlyPrice: 7.00
     },
     {
         pageViews: 55,
-        price: 11.50
+        monthlyPrice: 11.50
     },
     {
         pageViews: 70,
-        price: 15.50
+        monthlyPrice: 15.50
     },
     {
         pageViews: 85,
-        price: 19.00
+        monthlyPrice: 19.00
     },
     {
         pageViews: 100,
-        price: 22.00
+        monthlyPrice: 22.00
     },
     {
         pageViews: 115,
-        price: 24.50
+        monthlyPrice: 24.50
     },
     {
         pageViews: 130,
-        price: 26.50
+        monthlyPrice: 26.50
     },
     {
         pageViews: 145,
-        price: 28.00
+        monthlyPrice: 28.00
     },
     {
         pageViews: 160,
-        price: 29.00
+        monthlyPrice: 29.00
     },
     {
         pageViews: 175,
-        price: 29.50
+        monthlyPrice: 29.50
     }
 ]
 
-document.getElementById('toggle').addEventListener('click', changeBilling)
+function getInfo(billPeriod, pricing, arrIndex) {
+    document.getElementById('billing-period').textContent = billPeriod
+    document.getElementById('price').textContent = pricing.toFixed(2) // toFixed(2) rounds the result to two decimal places.
+    document.getElementById('pageviews').textContent = arrIndex.pageViews
+}
 
+let yearlyDiscount = .25
+let monthsInYear = 12
+
+document.getElementById('toggle').addEventListener('click', changeBilling)
+// changeBilling() is for when the slider is STATIC (i.e., the user has only checked/unchecked the toggle but has not moved the slider)
 function changeBilling() {
     let rangeSlider = document.getElementById('points')
+    let yearlyPrice = (ranges[rangeSlider.value].monthlyPrice - (ranges[rangeSlider.value].monthlyPrice * yearlyDiscount)) * monthsInYear
 
     if (document.getElementById('toggle').checked) {
-        document.getElementById('billing-period').textContent = '/ year'
-        document.getElementById('price').textContent = ranges[rangeSlider.value].price*(.75).toFixed(2)
-        
+        getInfo('/ year', yearlyPrice, ranges[rangeSlider.value])
     } else {
-        document.getElementById('billing-period').textContent = '/ month'
-        document.getElementById('price').textContent = ranges[rangeSlider.value].price.toFixed(2)
+        getInfo('/ month', ranges[rangeSlider.value].monthlyPrice, ranges[rangeSlider.value])
     }
 }
 
-document.getElementById('points').addEventListener('change', (event) => {
+// This is for when the slider is MOBILE (i.e., the user is moving the slider)
+document.getElementById('points').addEventListener('input', (event) => { // "input" instead of "change" so that it works while DRAGGING the slider's thumb and not just on the click release of the slider's thumb.
+    let yearlyPrice = (ranges[event.target.value].monthlyPrice - (ranges[event.target.value].monthlyPrice * yearlyDiscount)) * monthsInYear
 
     if (document.getElementById('toggle').checked) {
-        document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
-        document.getElementById('price').textContent = ranges[event.target.value].price*(.75).toFixed(2)
+        getInfo('/ year', yearlyPrice, ranges[event.target.value])
     } else {
-        document.getElementById('pageviews').textContent = ranges[event.target.value].pageViews
-        document.getElementById('price').textContent = ranges[event.target.value].price.toFixed(2)
+        getInfo('/ month', ranges[event.target.value].monthlyPrice, ranges[event.target.value])
     }
 })

@@ -1,4 +1,4 @@
-For the range slider, the below code should work, but it doesn't. I'm skipping it for now because without any styling it looks good enough for now.
+For the range slider, the below code should work (and Robert agreed), but it doesn't. I'm skipping it for now because without any styling it looks good enough for now. Also note that part of the styling, for this FEM project, would be the active state of the range slider. 
 
 
 /* Below is for the slider */
@@ -6,6 +6,7 @@ For the range slider, the below code should work, but it doesn't. I'm skipping i
 /*might help: https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html*/
 /*might help: https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html*/
 /*might help: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/*/
+/*might help: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider*/
 
 input[type=range] {
 	-webkit-appearance: none;
