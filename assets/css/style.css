@@ -237,7 +237,7 @@ input:checked + .slider:before {
     margin-right: 20px;
 }
 
-button {
+.main-bottom button {
     background-color: hsl(227, 35%, 25%);
     border: none;
     color: hsl(223, 50%, 87%);
@@ -304,22 +304,28 @@ footer
         margin-right: auto;
     }
 
-    .main-top {
-        background-color: lightgreen; /*just keep here while positioning the elements. Then delete.*/
-        display: flex;
-        justify-content: space-around;
-        /* align-items: center; */
-        flex-wrap: wrap;
+    .main-top div {
+        position: relative;
     }
 
     .main-top h1 {
+        text-align: left;
         font-size: 14px;
-        order: -2;
+        margin: 39px 0 46px 44px;
     }
 
     .main-top p {
+        position: absolute;
+        right: 50px;
+        top: 0;
+        margin-top: -16px; /* needed for some reason */
         font-size: 35px;
-        order: -1;
+    }
+
+    .main-top ul {
+        margin-top: 48px;
+        margin-left: 96px;
+        padding-bottom: 30px;
     }
 
     #billing-period {
@@ -416,15 +422,41 @@ footer
         font-size: 10px;
     }
 
+    .main-bottom div {
+        position: relative;
+    }
 
+    .main-bottom ul {
+        text-align: left;
+        font-size: 12px;
+        margin-left: 44px;
+    }
 
+    .main-bottom ul li {
+        margin-bottom: 11px;
+    }
+    
+    .main-bottom ul li:nth-of-type(3) {
+        padding-bottom: 28px;
+    }
 
+    .main-bottom ul img {
+        width: 9px;
+        height: 8px;
+        margin-right: 16px;
+    }
 
-    /* .main-top p {
-        margin-top: -30px;
-        
-    } */
+    .main-bottom button {
+        position: absolute;
+        right: 44px;
+        top: 0;
+    }
 
+    /* LEFT OFF HERE:
+    - Decrease the bottom and top margins or padding in the .main-top section to more closely match the FEM demo.
+    - Make everything in the button smaller.
+    - (I need to get the page to the point where it no longer has a scroll bar.)
+    */
 
 
 

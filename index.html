@@ -1,3 +1,9 @@
+<!-- NOTE: This project was left unfinished, just in the interest of time. If you pick back up on it, refer to "LEFT OFF" note near bottom of CSS for a starting place, and then refer to other notes about things unfinished. -->
+
+
+
+
+
 <!-- Any time I send him a reference to my project being updated on Github or Vercel, send their links, too. -->
 
 <!DOCTYPE html>
@@ -41,13 +47,15 @@
     </header>
 
     <main>
-      <div class="main-top">
-        <h1><span id="pageviews">100</span>K Pageviews</h1>
-        <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
-          <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
-          <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
-        </form>
-        <p>$<span id="price">22.00</span> <span id="billing-period">/ month</span></p>
+      <section class="main-top">
+        <div>
+          <h1><span id="pageviews">100</span>K Pageviews</h1>
+          <form> <!-- Reference: https://www.w3schools.com/tags/att_input_type_range.asp  -->
+            <label for="points"></label> <!-- QQQ: Do I need this line? If so, what to use instead of "points" on this and below lines?-->
+            <input type="range" id="points" name="points" min="0" max="10"/> <!-- <input type="range"> is known as a "slider". The line part is known as the "track" and the ball part is known as the "thumb". -->
+          </form>
+          <p>$<span id="price">22.00</span> <span id="billing-period">/ month</span></p>
+        </div>
         <ul>
           <li>Monthly Billing</li>
           <li>
@@ -58,15 +66,17 @@
           </li>
           <li>Yearly Billing <span>25%</span></li>
         </ul>
-      </div>
-      <div class="main-bottom">
-        <ul>
-          <li><img src="./assets/img/icon-check.svg" alt="">Unlimited websites</li>
-          <li><img src="./assets/img/icon-check.svg" alt="">100% data ownership</li>
-          <li><img src="./assets/img/icon-check.svg" alt="">Email reports</li>
-        </ul>
-        <a href="#" target="_blank"><button type="button">Start my trial</button></a>
-      </div>
+      </section>
+      <section class="main-bottom">
+        <div>
+          <ul>
+            <li><img src="./assets/img/icon-check.svg" alt="">Unlimited websites</li>
+            <li><img src="./assets/img/icon-check.svg" alt="">100% data ownership</li>
+            <li><img src="./assets/img/icon-check.svg" alt="">Email reports</li>
+          </ul>
+          <a href="#" target="_blank"><button type="button">Start my trial</button></a>
+        </div>      
+      </section>
     </main>
 
     <footer>
