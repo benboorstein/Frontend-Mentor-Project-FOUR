@@ -1,4 +1,4 @@
-const ranges = [ // An array of objects - Often the structure that's best to use!
+const ranges = [ // An array of objects...often the structure that's best to use!
     {
         pageViews: 25,
         monthlyPrice: 2.00
@@ -47,7 +47,7 @@ const ranges = [ // An array of objects - Often the structure that's best to use
 
 function getInfo(billPeriod, pricing, arrIndex) {
     document.getElementById('billing-period').textContent = billPeriod
-    document.getElementById('price').textContent = pricing.toFixed(2) // toFixed(2) rounds the result to two decimal places.
+    document.getElementById('price').textContent = pricing.toFixed(2) // toFixed(2) rounds the result to two decimal places and converts to a string.
     document.getElementById('pageviews').textContent = arrIndex.pageViews
 }
 

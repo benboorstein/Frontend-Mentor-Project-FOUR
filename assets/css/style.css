@@ -94,7 +94,7 @@ main {
     margin-bottom: 47px;
 }
 
-/* Note: This is where styling for the range slider would go. For info on it, reference "notes" document. */
+/* Note: This is where styling for the range slider would go. For info on it, reference "notes" file. */
 
 .main-top p {
     color: hsl(227, 35%, 25%);
@@ -131,7 +131,7 @@ ul {
 
 /********** The toggle (pasted from https://www.w3schools.com/howto/howto_css_switch.asp and then tweaked) begins here **********/
 
-/* NOTE: I have not yet done the active state for the toggle. I'd need to figure out where this code should go and also find the right color because FEM doesn't provide it for this project. */ 
+/* NOTE: I have not yet done the active state for the toggle. I'd need to figure out where this code should go and also find the right color because FEM doesn't provide it for this project. */
 
 /* The switch (the box around the slider) */
 .switch {

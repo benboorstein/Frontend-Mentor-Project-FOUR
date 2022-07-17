@@ -1,4 +1,5 @@
-For the range slider, the below code should work (and Robert agreed), but it doesn't. I'm skipping it for now because without any styling it looks good enough for now. Also note that part of the styling, for this FEM project, would be the active state of the range slider. 
+/* For the range slider, the below code should work (and Robert agreed), but it doesn't. I'm skipping it for now because without any styling it looks good enough for now. Also note that part of the styling, for this FEM project, would be the active state of the range slider. */
+
 
 
 /* Below is for the slider */
